@@ -12,22 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Custom_Rest_API_Endpoints extends WP_REST_Controller {
-	
 	private $api_namespace;
-	
 	private $user_base;
-	
 	private $api_version;
 	private $required_capability;
 	
 	public function __construct() {
-		$this->api_namespace = 'api-custom/v';
-		
+		$this->api_namespace = 'api-custom/';
 		$this->user_base = 'users';
-		
-		$this->api_version = '1';
+		$this->api_version = 'v1';
 		$this->required_capability = 'read';  // Minimum capability to use the endpoint
-		
 		$this->init();
 	}
 	
